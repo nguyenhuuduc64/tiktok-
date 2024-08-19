@@ -12,10 +12,10 @@ function AcountItems() {
         src="https://cdnmedia.tinmoi.vn/resize_1280x853/upload/trantrang/2023/04/14/rose8-1681463988-161957avatar.jpg"
       />
       <div className={cx('infor')}>
-        <h4 className={cx('name')}>
+        <div className={cx('name')}>
           <p>Nguyen Van A</p>
           <FontAwesomeIcon icon={faCircleCheck} className={cx('check-item')}></FontAwesomeIcon>
-        </h4>
+        </div>
         <span className={cx('user-name')}>nguyenvana</span>
       </div>
     </div>
