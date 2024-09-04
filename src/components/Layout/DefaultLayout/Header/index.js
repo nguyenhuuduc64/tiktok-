@@ -1,6 +1,7 @@
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import images from '../../../../assets/images';
+import Image from '../../../Image';
 import TippyHeadless from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -27,6 +28,7 @@ import AcountItems from '../AcountItems';
 import Menu from '../../../Menu';
 import { faMessage } from '@fortawesome/free-solid-svg-icons/faMessage';
 import { faCoins } from '@fortawesome/free-solid-svg-icons/faCoins';
+import Search from '../../Search';
 
 const cx = classNames.bind(styles);
 
@@ -86,44 +88,14 @@ const USER_MENUS = [
 
 function Header() {
     const current_user = true;
+
     return (
         <header className={classNames(styles.wrapper)}>
             <div className={classNames(styles.inner)}>
                 {/*logo */}
                 <img src={images.logo.default} alt="avt"></img>
-                <TippyHeadless
-                    render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                            <PopperWrapper>
-                                <h4 className={cx('search-title')}>Acounts</h4>
-                                <AcountItems />
-                                <AcountItems />
-                                <AcountItems />
-                            </PopperWrapper>
-                        </div>
-                    )}
-                >
-                    <div className={classNames(styles.search)}>
-                        <input placeholder="Search accouts and videos" spellCheck={false} />
-                        <button className={classNames(styles.clear)}>
-                            <FontAwesomeIcon icon={faCircleXmark}></FontAwesomeIcon>
-                        </button>
-                        <button>
-                            <FontAwesomeIcon className={classNames(styles.loading)} icon={faSpinner}></FontAwesomeIcon>
-                        </button>
-                        <span
-                            style={{
-                                width: '1px',
-                                height: '22px',
-                                backgroundColor: '#999',
-                            }}
-                        ></span>
-                        <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass}></FontAwesomeIcon>
-                        </button>
-                    </div>
-                </TippyHeadless>
-
+                {/*search */}
+                <Search />
                 <div className={cx('action')}>
                     {current_user ? (
                         <>
@@ -148,7 +120,7 @@ function Header() {
                     )}
                     <Menu items={current_user ? USER_MENUS : MENU_ITEMS}>
                         {current_user ? (
-                            <img
+                            <Image
                                 className={cx('user-avt')}
                                 alt=""
                                 src="https://t.vietgiaitri.com/2021/8/2/bi-mat-dang-sau-avatar-den-si-cua-rose-blackpink-tren-tiktok-khien-nguoi-ham-mo-ngo-ngang-ngo-ngac-va-bat-ngua-166-5935003.jpeg"

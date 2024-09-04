@@ -1,62 +1,64 @@
 .wrapper {
-  font-weight: 700;
-  width: 100px;
-  height: 36px;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: white;
-  + .wrapper {
-    margin-left: 8px;
-  }
-  &.disable {
-    user-select: none;
-    opacity: 0.5;
-  }
+    font-weight: 700;
+    width: 100px;
+    height: 36px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'ProximaNova', sans-serif;
+
+    background-color: white;
+    + .wrapper {
+        margin-left: 8px;
+    }
+    &.disable {
+        user-select: none;
+        opacity: 0.5;
+    }
 }
 .rounded {
-  border-radius: 100px;
-  border: 1px solid rgba(22, 24, 35, 0.12);
-  padding: 0;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
-  &:hover {
-    border-color: rgba(22, 24, 35, 0.2);
-    background-color: rgba(22, 24, 35, 0.06);
-  }
+    border-radius: 100px;
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    padding: 0;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+    &:hover {
+        border-color: rgba(22, 24, 35, 0.2);
+        background-color: rgba(22, 24, 35, 0.06);
+    }
 }
 .primary {
-  padding: 9px 16px;
-  font-size: 16px;
-  color: white;
-  background-color: var(--primary-color);
-  &:hover {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), rgb(254, 44, 85);
-  }
+    padding: 9px 16px;
+    font-size: 16px;
+    color: white;
+    background-color: var(--primary-color);
+    &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), rgb(254, 44, 85);
+    }
 }
 
 .outline {
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color);
-  min-width: 88px;
-  height: 28px;
-  padding: 4px 16pxs;
-  &:hover {
-    background-color: rgba(254, 44, 85, 0.06);
-  }
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    min-width: 88px;
+    height: 28px;
+    padding: 4px 16pxs;
+    &:hover {
+        background-color: rgba(254, 44, 85, 0.06);
+    }
 }
 
 .large {
-  width: 136px;
-  height: 48px;
-  border: 1px solid var(--primary-color);
-  padding: 14px 16px;
-  color: var(--primary-color);
+    width: 136px;
+    height: 48px;
+    border: 1px solid var(--primary-color);
+    padding: 14px 16px;
+    color: var(--primary-color);
 }
 
 .text {
-  font-weight: 700;
-  font-size: 16px;
+    font-weight: 700;
+    font-size: 16px;
 
-  &:hover {
-    text-decoration: underline;
-  }
+    &:hover {
+        text-decoration: underline;
+    }
 }
