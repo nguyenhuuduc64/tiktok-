@@ -3,7 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* Phần thanh trượt (thanh dọc) */
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Màu sắc của thanh trượt */
+    border-radius: 6px; /* Độ bo góc của thanh trượt */
+}
 :root {
     --primary-color: rgba(255, 44, 85, 1);
     --default-layout-header-style: 60px;

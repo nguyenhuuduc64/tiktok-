@@ -6,10 +6,10 @@ function DefaultLayout({ children }) {
     return (
         <div className={classNames(styles.wrapper)}>
             <Header />
-            {/* <div className={classNames(styles.container)}>
+            <div className={classNames(styles.container)}>
                 <Sidebar />
                 <div className={classNames(styles.content)}>{children}</div>
-            </div> */}
+            </div>
         </div>
     );
 }

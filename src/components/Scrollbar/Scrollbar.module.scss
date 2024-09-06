@@ -1,0 +1,37 @@
+.ps__rail-x {
+    height: 6px;
+}
+
+.ps__rail-y {
+    position: absolute; /* Đặt đường ray vào vị trí chính xác */
+    width: 12px;
+    right: 0; /* Đặt đường ray ở bên phải */
+    top: 0; /* Đặt đường ray ở vị trí đầu tiên */
+    bottom: 0; /* Đặt chiều dài của đường ray đến đáy */
+    background: #eee;
+}
+
+.ps__thumb-x {
+    background-color: #888;
+    border-radius: 3px;
+}
+
+.ps__thumb-y {
+    background-color: #888;
+    border-radius: 3px;
+    margin-top: 50px;
+    height: 100px;
+}
+
+.ps__thumb-x:hover {
+    background-color: #555;
+}
+
+.ps__thumb-y:hover {
+    background-color: #555;
+}
+
+.scroll-container {
+    height: 300px;
+    overflow: hidden; /* Ẩn thanh cuộn mặc định */
+}

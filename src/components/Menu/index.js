@@ -1,17 +1,32 @@
-import AcountItems from '../Layout/DefaultLayout/AcountItems';
-import { Wrapper as PopperWrapper } from '../Popper';
+import React, { useRef, useState, useEffect } from 'react';
+import PerfectScrollbar from 'perfect-scrollbar';
+import 'perfect-scrollbar/css/perfect-scrollbar.css';
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 import styles from './Menu.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Wrapper as PopperWrapper } from '../Popper';
 import MenuItems from './MenuItems';
 import Header from './Header';
-import { useState } from 'react';
 
 const cx = classNames.bind(styles);
+
 function Menu({ children, items = [] }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
+    const refItems = useRef(null);
+    const scrollbarRef = useRef(null);
+
+    useEffect(() => {
+        if (refItems.current) {
+            console.log(refItems.current);
+            scrollbarRef.current = new PerfectScrollbar(refItems.current);
+        }
+        return () => {
+            if (scrollbarRef.current) {
+                scrollbarRef.current.destroy();
+            }
+        };
+    }, [current]);
 
     const renderItems = () => {
         return current.data.map((item, index) => {
@@ -22,8 +37,7 @@ function Menu({ children, items = [] }) {
                     data={item}
                     onClick={() => {
                         if (isParent) {
-                            <h4>{item.title}</h4>;
-                            setHistory((pre) => [...pre, item.children]);
+                            setHistory((prev) => [...prev, item.children]);
                         }
                     }}
                 />
@@ -33,7 +47,8 @@ function Menu({ children, items = [] }) {
 
     return (
         <Tippy
-            hideOnClick="true"
+            visible={true}
+            hideOnClick={true}
             interactive
             onHide={() => setHistory((prev) => prev.slice(0, 1))}
             delay={[0, 500]}
@@ -51,8 +66,9 @@ function Menu({ children, items = [] }) {
                                 }}
                             />
                         )}
-
-                        {renderItems()}
+                        <div className={cx('items-render')} ref={refItems}>
+                            {renderItems()}
+                        </div>
                     </PopperWrapper>
                 </div>
             )}

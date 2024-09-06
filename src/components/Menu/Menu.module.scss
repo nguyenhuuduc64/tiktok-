@@ -47,6 +47,7 @@ a {
     height: 50px;
     width: 100px;
     width: 100%;
+    background-color: white;
 }
 .back-btn {
     width: 50px;
@@ -59,4 +60,10 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.items-render {
+    max-height: 300px;
+    overflow-y: auto;
+    position: relative;
 }
